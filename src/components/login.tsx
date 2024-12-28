@@ -7,7 +7,6 @@ import {
   Container,
   Divider,
   FormControl,
-  IconButton,
   InputLabel,
   MenuItem,
   Paper,
@@ -16,9 +15,9 @@ import {
   Stack,
   TextField,
   Typography,
-  useTheme,
-  useMediaQuery
+  IconButton,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom'; // <-- Import useNavigate
 import FacebookIcon from '../assets/facebook.png';
 import GoogleIcon from '../assets/google.png';
 import LinkedInIcon from '../assets/linkedin.png';
@@ -31,32 +30,32 @@ interface LoginFormData {
 }
 
 const LoginPage: React.FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  
+  const navigate = useNavigate(); // <-- Initialize useNavigate
   const [formData, setFormData] = useState<LoginFormData>({
     email: '',
     password: '',
-    role: 'Customer'
+    role: 'Customer',
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleRoleChange = (e: SelectChangeEvent) => {
     setFormData({
       ...formData,
-      role: e.target.value
+      role: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // You can add any additional logic here (e.g., form validation)
     console.log('Form submitted:', formData);
+    navigate('/course'); // <-- Navigate to the course page after login
   };
 
   return (
@@ -66,7 +65,7 @@ const LoginPage: React.FC = () => {
         display: 'flex',
         bgcolor: 'grey.50',
         position: 'relative',
-        p: 2
+        p: 2,
       }}
     >
       {/* Sign Up Button */}
@@ -77,7 +76,7 @@ const LoginPage: React.FC = () => {
           top: 16,
           right: 16,
           borderRadius: 28,
-          px: 4
+          px: 4,
         }}
       >
         Sign Up
@@ -85,7 +84,7 @@ const LoginPage: React.FC = () => {
 
       <Container maxWidth="lg" sx={{ my: 'auto' }}>
         <Stack
-          direction={isMobile ? 'column' : 'row'}
+          direction="row"
           spacing={4}
           alignItems="center"
           justifyContent="center"
@@ -105,7 +104,7 @@ const LoginPage: React.FC = () => {
                 overflow: 'hidden',
                 borderRadius: 8,
                 maxWidth: 400,
-                mx: 'auto'
+                mx: 'auto',
               }}
             >
               <Box
@@ -124,7 +123,7 @@ const LoginPage: React.FC = () => {
               maxWidth: 450,
               width: '100%',
               borderRadius: 8,
-              bgcolor: 'background.paper'
+              bgcolor: 'background.paper',
             }}
           >
             <CardContent sx={{ p: 4 }}>
@@ -168,7 +167,7 @@ const LoginPage: React.FC = () => {
                     sx={{
                       display: 'flex',
                       justifyContent: 'space-between',
-                      alignItems: 'center'
+                      alignItems: 'center',
                     }}
                   >
                     <Button
@@ -201,25 +200,22 @@ const LoginPage: React.FC = () => {
                     justifyContent="center"
                     sx={{ mt: 2 }}
                   >
-                    {[
-                      { icon: FacebookIcon, color: '#1877F2' },
-                      { icon: GoogleIcon, color: '#DB4437' },
-                      { icon: LinkedInIcon, color: '#0A66C2' }
-                    ].map((social, index) => (
-                      <IconButton
-                        key={index}
-                        sx={{
-                          border: 1,
-                          borderColor: 'divider',
-                          '&:hover': {
-                            // color: social.color,
-                            bgcolor: 'action.hover'
-                          }
-                        }}
-                      >
-                        <img src={social.icon} style={{width: "30px"}} className='w-[10px]'/>
-                      </IconButton>
-                    ))}
+                    {[{ icon: FacebookIcon }, { icon: GoogleIcon }, { icon: LinkedInIcon }].map(
+                      (social, index) => (
+                        <IconButton
+                          key={index}
+                          sx={{
+                            border: 1,
+                            borderColor: 'divider',
+                            '&:hover': {
+                              bgcolor: 'action.hover',
+                            },
+                          }}
+                        >
+                          <img src={social.icon} style={{ width: '30px' }} />
+                        </IconButton>
+                      )
+                    )}
                   </Stack>
                 </Stack>
               </form>
