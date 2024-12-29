@@ -44,6 +44,17 @@ const CoursePage: React.FC = () => {
       reviews: 40,
       image: "https://images.stockcake.com/public/6/7/6/67667592-ce5e-4658-b0e8-fa831e287ca2_large/traditional-weaving-technique-stockcake.jpg", // Replace with actual network image URL
     },
+    {
+      id: "3",
+      title: "Traditional Weaving Techniques",
+      category: "Made by Artisans",
+      instructor: "Ravi Prakash",
+      price: 30.0,
+      rating: 4.7,
+      reviews: 40,
+      image: "https://images.stockcake.com/public/6/7/6/67667592-ce5e-4658-b0e8-fa831e287ca2_large/traditional-weaving-technique-stockcake.jpg", // Replace with actual network image URL
+    },
+    
     // Add more courses as needed
   ];
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import DatePicker from "react-datepicker"; // Make sure to install react-datepicker
 import "react-datepicker/dist/react-datepicker.css"; // Import styles for the date picker
 
@@ -11,16 +11,18 @@ const PaymentSuccess = ({ isOpen, onClose }) => {
         <div className="w-16 h-16 relative mb-4">
           {/* Outer Circle Animation */}
           <div className="animate-circle absolute inset-0 border-4 border-green-500 rounded-full"></div>
-          
+
           {/* Checkmark */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div
-              className="w-4 h-8 border-r-4 border-b-4 border-green-500 transform rotate-45 translate-x-[10%] translate-y-[-10%]"
-            ></div>
+            <div className="w-4 h-8 border-r-4 border-b-4 border-green-500 transform rotate-45 translate-x-[10%] translate-y-[-10%]"></div>
           </div>
         </div>
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">Payment Successful!</h2>
-        <p className="text-gray-600 mb-6">Your transaction has been completed</p>
+        <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          Payment Successful!
+        </h2>
+        <p className="text-gray-600 mb-6">
+          Your transaction has been completed
+        </p>
         <button
           onClick={onClose}
           className="text-blue-600 hover:text-blue-700 font-medium"
@@ -55,18 +57,44 @@ const PaymentScreen = () => {
     setFormData({ ...formData, date });
   };
 
+  const validateForm = () => {
+    const { cardHolderName, cardNumber, cvv, date } = formData;
+    if (!cardHolderName || !cardNumber || !cvv || !selectedCard || !date) {
+      alert("Please fill in all the fields and select a card.");
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setShowSuccess(true);
+    if (validateForm()) {
+      setShowSuccess(true);
+    }
   };
 
   const cardImages = [
-    { id: "paypal", icon: "PayPal" },
-    { id: "credit", icon: "💳" },
-    { id: "mastercard", icon: "Mastercard" },
-    { id: "card", icon: "🏦" },
-    { id: "gpay", icon: "G Pay" },
-    { id: "visa", icon: "VISA" }
+    {
+      id: "paypal",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQG2oQemAc1z7LPGv_hiCn3dfza6xSgupJlA&s",
+    },
+    {
+      id: "credit",
+      image:
+        "https://www.skydo.com/_next/image?url=https%3A%2F%2Fskydo-assets.s3.ap-south-1.amazonaws.com%2FAmerican_Express_Blue_Business_Plus_Credit_Card_0ab64dc432.jpg&w=3840&q=75",
+    },
+    {
+      id: "mastercard",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mastercard_2019_logo.svg/800px-Mastercard_2019_logo.svg.png",
+    },
+    { id: "gpay", image: "https://static.cdnlogo.com/logos/g/93/google.svg" },
+    {
+      id: "visa",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_2021.svg/1200px-Visa_2021.svg.png",
+    },
   ];
 
   return (
@@ -79,7 +107,9 @@ const PaymentScreen = () => {
 
         <div className="mt-8">
           <h2 className="text-lg font-semibold text-[#1A1A1A] mb-4">Card</h2>
-          <div className="grid grid-cols-6 gap-4">
+          <div className="grid grid-cols-5 gap-8">
+            {" "}
+            {/* Reduced columns for larger container */}
             {cardImages.map((card) => (
               <div
                 key={card.id}
@@ -90,14 +120,20 @@ const PaymentScreen = () => {
                 }`}
                 onClick={() => handleCardSelection(card.id)}
               >
-                <span className="text-sm font-medium">{card.icon}</span>
+                <img
+                  src={card.image}
+                  alt={`${card.id} logo`}
+                  className="h-20 w-20 object-contain" // Increased image size
+                />
               </div>
             ))}
           </div>
         </div>
 
         <form onSubmit={handleSubmit} className="mt-12">
-          <h2 className="text-lg font-semibold text-[#1A1A1A] mb-6">Payment Details</h2>
+          <h2 className="text-lg font-semibold text-[#1A1A1A] mb-6">
+            Payment Details
+          </h2>
 
           <div className="space-y-4">
             <div>
@@ -183,18 +219,36 @@ const PaymentScreen = () => {
 
       <style jsx global>{`
         @keyframes fadeIn {
-          from { opacity: 0; transform: scale(0.95); }
-          to { opacity: 1; transform: scale(1); }
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
 
         @keyframes circleAnimation {
-          from { transform: scale(0.8); opacity: 0; }
-          to { transform: scale(1); opacity: 1; }
+          from {
+            transform: scale(0.8);
+            opacity: 0;
+          }
+          to {
+            transform: scale(1);
+            opacity: 1;
+          }
         }
 
         @keyframes checkAnimation {
-          from { transform: scale(0.5) rotate(45deg); opacity: 0; }
-          to { transform: scale(1) rotate(0deg); opacity: 1; }
+          from {
+            transform: scale(0.5) rotate(45deg);
+            opacity: 0;
+          }
+          to {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+          }
         }
 
         .animate-fadeIn {
