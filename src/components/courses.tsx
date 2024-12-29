@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Course {
   id: string;
@@ -17,7 +18,9 @@ interface FilterOption {
   checked: boolean;
 }
 
-const CoursePage = () => {
+const CoursePage: React.FC = () => {
+  const navigate = useNavigate();
+
   // Sample course data with network images
   const courses: Course[] = [
     {
@@ -29,7 +32,7 @@ const CoursePage = () => {
       rating: 4.9,
       reviews: 32,
       image:
-        "https://i0.wp.com/kaziranganationalparkassam.in/wp-content/uploads/2018/11/handicrafts.jpg?resize=648%2C365&ssl=1", // Replace with actual network image URL
+        "https://media.licdn.com/dms/image/D4D12AQFsK_G3iOWSLg/article-cover_image-shrink_720_1280/0/1702122874916?e=2147483647&v=beta&t=kHnSGyAzDsbfKvxsf5vn31v99QJ1ykXhTOQxapn5vDk", // Replace with actual network image URL
     },
     {
       id: "2",
@@ -39,7 +42,7 @@ const CoursePage = () => {
       price: 30.0,
       rating: 4.7,
       reviews: 40,
-      image: "https://your-network-image-url.com/path/to/image2.jpg", // Replace with actual network image URL
+      image: "https://images.stockcake.com/public/6/7/6/67667592-ce5e-4658-b0e8-fa831e287ca2_large/traditional-weaving-technique-stockcake.jpg", // Replace with actual network image URL
     },
     // Add more courses as needed
   ];
@@ -224,7 +227,10 @@ const CoursePage = () => {
                     <span>{course.instructor}</span>
                     <span>{course.price} INR</span>
                   </div>
-                  <button className="w-full py-2 mt-3 bg-blue-600 text-white font-semibold text-sm rounded-lg hover:bg-blue-700">
+                  <button
+                    className="w-full py-2 mt-3 bg-blue-600 text-white font-semibold text-sm rounded-lg hover:bg-blue-700"
+                    onClick={() => navigate("/course-details")} // Navigate to the Course Details page
+                  >
                     Enroll Now →
                   </button>
                 </div>
