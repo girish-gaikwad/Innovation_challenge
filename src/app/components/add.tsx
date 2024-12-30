@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, Users, Award, Book, PocketKnife, Star, ArrowRight, Eye } from 'lucide-react';
 
 const WorkshopEvents = () => {
   const [hoveredEvent, setHoveredEvent] = useState(null);
-  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const workshops = [
     {

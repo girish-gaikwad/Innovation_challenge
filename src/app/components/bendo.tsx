@@ -1,8 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { Aperture, Award, Star } from "lucide-react";
+import { motion } from 'framer-motion';
+import { Award, Star } from "lucide-react";
+import Image from "next/image";
 
 const BentoGrid = () => {
     return (
@@ -15,10 +14,12 @@ const BentoGrid = () => {
                     transition={{ duration: 0.3 }}
                 >
                     <div className="absolute inset-0 bg-[#8B4513] opacity-20 group-hover:opacity-30 transition-opacity" />
-                    <img
-                        src="./gallary6.png"
+                    <Image
+                        src="/gallary6.png"
                         alt="Featured pottery"
-                        className="w-full h-full object-cover aspect-square md:aspect-auto min-h-[400px]"
+                        width={800}
+                        height={800}
+                        className="w-full h-full object-cover  aspect-square md:aspect-auto min-h-[400px]"
                     />
                     <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
                         <Badge className="mb-2 bg-[#CD853F]">Featured Collection</Badge>
@@ -33,9 +34,11 @@ const BentoGrid = () => {
                     whileHover={{ scale: 0.98 }}
                 >
                     <div className="absolute inset-0 bg-[#8B4513] opacity-20 group-hover:opacity-30 transition-opacity" />
-                    <img
-                        src="./gallary7.png"
+                    <Image
+                        src="/gallary7.png"
                         alt="Tall pottery"
+                        width={800}
+                        height={800}
                         className="w-full h-full object-cover min-h-[400px]"
                     />
                     <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
@@ -52,9 +55,11 @@ const BentoGrid = () => {
                         whileHover={{ scale: 0.98 }}
                     >
                         <div className="absolute inset-0 bg-[#8B4513] opacity-20 group-hover:opacity-30 transition-opacity" />
-                        <img
-                            src={`./gallary${i}.png`}
+                        <Image
+                            src={`/gallary${i}.png`}
                             alt={`Gallery item ${i}`}
+                            width={800}
+                            height={800}
                             className="w-full h-full object-cover aspect-square"
                         />
                         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
@@ -68,9 +73,11 @@ const BentoGrid = () => {
                     className="relative rounded-3xl overflow-hidden bg-[#DEB887] p-6 md:col-span-2"
                     whileHover={{ scale: 0.98 }}
                 >
-                    <img
-                        src="./gallary5.png"
+                    <Image
+                        src="/gallary5.png"
                         alt="Award background"
+                        width={800}
+                        height={800}
                         className="absolute inset-0 object-cover"
                     />
                     <div className="flex items-start gap-4 relative">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from "@/lib/utils";
+import Image from 'next/image';
 
 const EnhancedHero = ({ abrilFatface }) => {
   // Custom floating animation
@@ -194,9 +195,11 @@ const EnhancedHero = ({ abrilFatface }) => {
                 repeatType: "reverse",
               }}
             >
-              <img
+              <Image
                 src="./art.png"
                 alt="Pottery main"
+                width={800}
+                height={800}
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -234,9 +237,11 @@ const EnhancedHero = ({ abrilFatface }) => {
               className={`absolute ${image.position} z-40 rounded-xl overflow-hidden shadow-xl`}
               style={{ width: image.size.width, height: image.size.height }}
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
+                width={800}
+                height={800}
                 className="w-full h-full object-cover"
               />
               <motion.div 

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Leaf, Paintbrush, Flame, Store } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Abril_Fatface } from 'next/font/google';
+import Image from 'next/image';
 
 
 const abrilFatface = Abril_Fatface({
@@ -114,9 +115,11 @@ const ProcessSection = () => {
                             transition={{ delay: i * 0.1 }}
                             className="bg-[#DEB887]/10 rounded-lg p-6 border border-[#FDF5E6]/20"
                         >
-                            <img
-                                src={`./process${i}.png`}
+                            <Image
+                                src={`/process${i}.png`}
                                 alt={`Process illustration ${i}`}
+                                width={800}
+                                height={800}
                                 className="w-full h-48 object-cover rounded-md mb-4 opacity-80"
                             />
                             <p className="text-[#FDF5E6]/60 text-sm text-center">

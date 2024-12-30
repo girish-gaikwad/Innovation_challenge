@@ -1,15 +1,15 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
-import { 
-  ChevronDown,  
-  SlidersHorizontal,
-  X,
+import {
   History,
-  Star 
+  SlidersHorizontal,
+  Star,
+  X
 } from 'lucide-react';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 // Sample antique products
 const products = [
@@ -233,9 +233,11 @@ export default function ProductPage() {
                   className="bg-white shadow-lg hover:shadow-xl transform hover:scale-102 transition-all duration-300"
                 >
                   <CardHeader className="p-0">
-                    <img 
+                    <Image 
                       src={product.image} 
                       alt={product.name}
+                      width={800}
+                      height={800}
                       className="w-full h-56 object-cover rounded-t-lg"
                     />
                   </CardHeader>

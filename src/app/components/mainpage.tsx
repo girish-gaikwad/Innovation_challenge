@@ -1,18 +1,18 @@
 "use client";
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, CircleUser, ShoppingBag, Menu, Star, Clock, Award, Mail } from 'lucide-react';
-import { Abril_Fatface, Rock_Salt } from 'next/font/google';
-import { cn } from '@/lib/utils';
-import { NavigationMenuDemo } from './demo';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { BentoDemo } from './gallery';
-import GallerySection from './bendo';
-import ProcessSection from './process';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import { ArrowRight, Award, CircleUser, Clock, Mail, Star } from 'lucide-react';
+import { Abril_Fatface, Rock_Salt } from 'next/font/google';
+import Image from "next/image";
+import { useState } from 'react';
 import AdditionalSections from './add';
+import GallerySection from './bendo';
+import { NavigationMenuDemo } from './demo';
+import ProcessSection from './process';
 
 const rockSalt = Rock_Salt({
     variable: "--font-rock-salt",
@@ -112,9 +112,11 @@ const ProductCard = ({ index, title }) => (
         className="bg-[#FDF5E6] rounded-lg overflow-hidden shadow-lg"
     >
         <div className="h-64 bg-[#8B4513]/20">
-            <img
-                src={`./Vintage${index}.png`}
+            <Image
+                src={`/Vintage${index}.png`}
                 alt={title}
+                width={800}
+                height={800}
                 className="w-full h-full object-cover"
             />
         </div>
@@ -284,9 +286,11 @@ export default function CreativePotteryLayout() {
                             className="relative z-30 rounded-2xl overflow-hidden shadow-2xl"
                             style={{ width: '400px', height: '500px' }}
                         >
-                            <img
-                                src="./art.png"
+                            <Image
+                                src="/art.png"
                                 alt="Pottery main"
+                                width={800}
+                                height={800}
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
@@ -309,9 +313,11 @@ export default function CreativePotteryLayout() {
                             className="absolute top-0 right-0 z-40 rounded-xl overflow-hidden shadow-xl"
                             style={{ width: '200px', height: '250px' }}
                         >
-                            <img
-                                src="./art2.png"
+                            <Image
+                                src="/art2.png"
                                 alt="Pottery detail 1"
+                                width={800}
+                                height={800}
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent" />
@@ -333,9 +339,11 @@ export default function CreativePotteryLayout() {
                             className="absolute bottom-0 left-0 z-50 rounded-xl overflow-hidden shadow-xl"
                             style={{ width: '250px', height: '300px' }}
                         >
-                            <img
-                                src="./pottery.png"
+                            <Image
+                                src="/pottery.png"
                                 alt="Pottery detail 2"
+                                width={800}
+                                height={800}
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
