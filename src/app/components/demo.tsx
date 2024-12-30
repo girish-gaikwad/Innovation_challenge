@@ -28,10 +28,10 @@ const components: { title: string; href: string; description: string }[] = [
       "Discover a diverse range of artisans from around the world.",
   },
   {
-    title: "Support",
-    href: "/support",
+    title: "Login",
+    href: "/login",
     description:
-      "Our support team is available to assist you with any questions or concerns.",
+      "Sign in to your account to access your orders and wishlist.",
   },
   {
     title: "Contact Us",
@@ -76,11 +76,11 @@ export function NavigationMenuDemo() {
               <ListItem href="/products" title="Our Products">
                 Explore our curated collection of antique artifacts from India.
               </ListItem>
-              <ListItem href="/docs/installation" title="Our Artisans">
+              <ListItem href="/courses" title="Our Courses">
                 Learn about the artisans who make these products.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="support">
-                Our support team is available to assist you.
+              <ListItem href="/login" title="Login">
+                Sign in to your account to access your orders and wishlist.
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -140,7 +140,7 @@ export function NavigationMenuDemo() {
         </NavigationMenuItem>
 
         <NavigationMenuItem className="hidden md:block">
-          <Link href="/docs" legacyBehavior passHref>
+          <Link href="/contact" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               CONTACT US
             </NavigationMenuLink>

@@ -20,7 +20,7 @@ const products = [
     category: "Religious Artifacts",
     period: "19th Century",
     rating: 4.8,
-    image: "./Vintage1.png",
+    image: "/Vintage1.png",
     description: "Intricately carved brass Ganesha statue from Rajasthan"
   },
   {
@@ -30,7 +30,7 @@ const products = [
     category: "Art",
     period: "18th Century",
     rating: 4.7,
-    image: "./art2.png",
+    image: "/art2.png",
     description: "Hand-painted miniature depicting royal court scenes"
   },
   {
@@ -40,7 +40,7 @@ const products = [
     category: "Jewelry",
     period: "Early 20th Century",
     rating: 4.5,
-    image: "./art3.png",
+    image: "/art3.png",
     description: "Sterling silver payal with intricate tribal designs"
   },
   {
@@ -50,7 +50,7 @@ const products = [
     category: "Architectural",
     period: "19th Century",
     rating: 4.9,
-    image: "./art4.png",
+    image: "/art4.png",
     description: "Teak wood panel from Gujarati haveli"
   }
 ];

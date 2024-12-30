@@ -29,10 +29,10 @@ interface FeatureCardProps {
     icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
     title: string;
     description: string;
-  }
+}
 
 // Feature Card Component
-const FeatureCard = ({ icon: Icon, title, description }:FeatureCardProps) => (
+const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => (
     <Card className="bg-[#FDF5E6] border-[#8B4513] border-2">
         <CardHeader>
             <Icon className="w-10 h-10 text-[#8B4513] mb-2" />
@@ -49,11 +49,11 @@ interface TestimonialCardProps {
     name: string;
     role: string;
     content: string;
-  }
+}
 
 
 // Testimonial Card Component
-const TestimonialCard = ({ name, role, content }:TestimonialCardProps) => (
+const TestimonialCard = ({ name, role, content }: TestimonialCardProps) => (
     <motion.div
         whileHover={{ scale: 1.02 }}
         className="bg-[#FDF5E6] p-6 rounded-lg border-2 border-[#8B4513] shadow-lg"
@@ -77,10 +77,10 @@ const TestimonialCard = ({ name, role, content }:TestimonialCardProps) => (
 interface ProductCardProps {
     index: number;
     title: string;
-  }
+}
 
 // Product Card Component
-const ProductCard = ({ index, title }:ProductCardProps) => (
+const ProductCard = ({ index, title }: ProductCardProps) => (
     <motion.div
         whileHover={{ y: -10 }}
         className="bg-[#FDF5E6] rounded-lg overflow-hidden shadow-lg"
@@ -112,67 +112,67 @@ export default function CreativePotteryLayout() {
         <div className="min-h-screen bg-[#FDF5E6] overflow-hidden">
             {/* Navigation */}
             <motion.nav
-  initial={{ y: -100 }}
-  animate={{ y: 0 }}
-  className="fixed top-0 left-0 right-0 bg-[#8B4513] backdrop-blur-lg z-50"
->
-  <div className="container mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
-    {/* Logo Section */}
-    <motion.h1
-      className={cn(
-        "text-lg sm:text-xl font-bold text-[#FDF5E6]",
-        rockSalt.className
-      )}
-      whileHover={{ scale: 1.05 }}
-    >
-      ArtisanCrafts
-    </motion.h1>
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                className="fixed top-0 left-0 right-0 bg-[#8B4513] backdrop-blur-lg z-50"
+            >
+                <div className="container mx-auto px-4 sm:px-8 py-4 flex justify-between items-center">
+                    {/* Logo Section */}
+                    <motion.h1
+                        className={cn(
+                            "text-lg sm:text-xl font-bold text-[#FDF5E6]",
+                            rockSalt.className
+                        )}
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        ArtisanCrafts
+                    </motion.h1>
 
-    {/* Navigation Menu */}
-    <div className="hidden sm:block">
-      <NavigationMenuDemo />
-    </div>
+                    {/* Navigation Menu */}
+                    <div className="hidden sm:block">
+                        <NavigationMenuDemo />
+                    </div>
 
-    {/* Mobile Menu Button */}
-    <div className="block sm:hidden">
-      <button
-        className="text-[#FDF5E6] focus:outline-none"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <motion.div
-          initial={{ rotate: 0 }}
-          animate={{ rotate: menuOpen ? 90 : 0 }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
-        </motion.div>
-      </button>
-    </div>
-  </div>
+                    {/* Mobile Menu Button */}
+                    <div className="block sm:hidden">
+                        <button
+                            className="text-[#FDF5E6] focus:outline-none"
+                            onClick={() => setMenuOpen(!menuOpen)}
+                        >
+                            <motion.div
+                                initial={{ rotate: 0 }}
+                                animate={{ rotate: menuOpen ? 90 : 0 }}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-6 w-6"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M4 6h16M4 12h16m-7 6h7"
+                                    />
+                                </svg>
+                            </motion.div>
+                        </button>
+                    </div>
+                </div>
 
-  {/* Mobile Menu Dropdown */}
-  {menuOpen && (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="sm:hidden bg-[#8B4513] text-[#FDF5E6]  border py-1"
-    >
-      <NavigationMenuDemo />
-    </motion.div>
-  )}
-</motion.nav>
+                {/* Mobile Menu Dropdown */}
+                {menuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="sm:hidden bg-[#8B4513] text-[#FDF5E6]  border py-1"
+                    >
+                        <NavigationMenuDemo />
+                    </motion.div>
+                )}
+            </motion.nav>
 
             {/* hero section */}
             <div className="relative h-screen overflow-hidden pt-20">
