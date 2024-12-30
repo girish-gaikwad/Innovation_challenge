@@ -16,20 +16,7 @@ const EnhancedHero = ({ abrilFatface }) => {
     }
   };
 
-  // Shimmer effect for decorative elements
-  const shimmer = {
-    animate: {
-      background: [
-        "linear-gradient(45deg, rgba(139,69,19,0.1) 0%, rgba(139,69,19,0.2) 50%, rgba(139,69,19,0.1) 100%)",
-        "linear-gradient(45deg, rgba(139,69,19,0.2) 0%, rgba(139,69,19,0.1) 50%, rgba(139,69,19,0.2) 100%)"
-      ],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        repeatType: "reverse"
-      }
-    }
-  };
+ 
 
   return (
     <div className="relative h-screen overflow-hidden pt-20">

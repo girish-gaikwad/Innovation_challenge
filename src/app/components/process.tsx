@@ -42,7 +42,7 @@ const ProcessSection = () => {
                     className="text-center mb-24"
                 >
                     <h2 className={cn("text-4xl font-bold text-[#FDF5E6] mb-6", abrilFatface.className)}>
-                        The Artisan's Journey
+                        The Artisan&apos;s Journey
                     </h2>
                     <p className="text-[#FDF5E6]/80 max-w-2xl mx-auto">
                         From raw clay to finished masterpiece, discover our time-honored process of creating each unique piece

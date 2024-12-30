@@ -26,36 +26,6 @@ const abrilFatface = Abril_Fatface({
     subsets: ["latin"],
 });
 
-// Spinning Pot Animation Component
-const SpinningPot = () => {
-    const [isHovered, setIsHovered] = useState(false);
-
-    return (
-        <motion.div
-            className="relative w-64 h-64"
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
-        >
-            <motion.div
-                className="absolute bottom-0 w-64 h-40 bg-[#8B4513]"
-                animate={{
-                    scaleY: isHovered ? 1.5 : 1,
-                    y: isHovered ? -20 : 0
-                }}
-                style={{ borderRadius: '40% 40% 20% 20%' }}
-            />
-            <motion.div
-                className="absolute bottom-0 w-48 h-48 bg-[#6a2316] left-1/2 transform -translate-x-1/2"
-                animate={{
-                    rotate: isHovered ? 360 : 0,
-                    scaleY: isHovered ? 0.8 : 1
-                }}
-                transition={{ duration: 1.5 }}
-                style={{ borderRadius: '30% 30% 40% 40%' }}
-            />
-        </motion.div>
-    );
-};
 
 // Feature Card Component
 const FeatureCard = ({ icon: Icon, title, description }) => (
@@ -70,16 +40,6 @@ const FeatureCard = ({ icon: Icon, title, description }) => (
     </Card>
 );
 
-
-const imageData = [
-    { src: "./art1.png", alt: "Pottery piece 1", title: "Pottery 1", description: "Beautiful handcrafted pottery." },
-    { src: "./art2.png", alt: "Pottery piece 2", title: "Pottery 2", description: "Traditional craftsmanship." },
-    { src: "./art3.png", alt: "Pottery piece 3", title: "Pottery 3", description: "Modern design with tradition." },
-    { src: "./art4.png", alt: "Pottery piece 4", title: "Pottery 4", description: "Unique and artistic." },
-    { src: "./art5.png", alt: "Pottery piece 5", title: "Pottery 5", description: "Elegant and timeless." },
-    { src: "./art6.png", alt: "Pottery piece 6", title: "Pottery 6", description: "Crafted with love." },
-    { src: "./art7.png", alt: "Pottery piece 7", title: "Pottery 7", description: "A masterpiece." },
-];
 
 
 
@@ -133,8 +93,6 @@ const ProductCard = ({ index, title }) => (
 
 // Main Layout Component
 export default function CreativePotteryLayout() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [hoveredItem, setHoveredItem] = useState(null);
     const [menuOpen, setMenuOpen] = useState(false);
     return (
         <div className="min-h-screen bg-[#FDF5E6] overflow-hidden">
@@ -236,7 +194,7 @@ export default function CreativePotteryLayout() {
                         />
 
                         <h1 className={cn("text-7xl font-bold text-[#3E2723] mb-6", abrilFatface.className)}>
-                            Artisan's Corner
+                            Artisan&apos;s Corner
                         </h1>
 
                         {/* Animated underline */}
