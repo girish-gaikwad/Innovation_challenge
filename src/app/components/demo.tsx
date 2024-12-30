@@ -22,10 +22,10 @@ const components: { title: string; href: string; description: string }[] = [
       "Explore a curated collection of antique artifacts from India.",
   },
   {
-    title: "Artisan Carousel",
-    href: "/artisans",
+    title: "AI driven Product",
+    href: "/ai-com",
     description:
-      "Discover a diverse range of artisans from around the world.",
+      "AI driven products to help you in your daily life.",
   },
   {
     title: "Login",
