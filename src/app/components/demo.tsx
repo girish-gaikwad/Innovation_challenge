@@ -118,7 +118,7 @@ export function NavigationMenuDemo() {
                     href="/car"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      Artisan's Community
+                      Artisan&apos;s Community
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                      Join the community of artisans and learn from the best.
@@ -130,7 +130,7 @@ export function NavigationMenuDemo() {
               find the best artisans in your area.
               </ListItem>
               <ListItem href="/docs/installation" title="Visit Artisan's Studio">
-              Customize your own artisan's studio.
+              Customize your own artisan&apos;s studio.
               </ListItem>
               <ListItem href="/docs/primitives/typography" title="Donate">
               Help the artisans in need.
