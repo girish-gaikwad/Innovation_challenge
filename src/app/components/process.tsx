@@ -11,7 +11,13 @@ const abrilFatface = Abril_Fatface({
     weight: "400",
     subsets: ["latin"],
 });
-const ProcessStep = ({ icon: Icon, title, description, delay }) => (
+interface ProcessStepProps {
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    title: string;
+    description: string;
+    delay: number;
+}
+const ProcessStep: React.FC<ProcessStepProps> = ({ icon: Icon, title, description, delay }) => (
     <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

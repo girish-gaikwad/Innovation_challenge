@@ -3,8 +3,9 @@ import { motion } from 'framer-motion';
 import { cn } from "@/lib/utils";
 import Image from 'next/image';
 
-const EnhancedHero = ({ abrilFatface }) => {
-  // Custom floating animation
+
+const EnhancedHero = () => {
+ // Custom floating animation
   const floatingAnimation = {
     animate: {
       y: ["0%", "-2%", "0%"],
@@ -16,7 +17,7 @@ const EnhancedHero = ({ abrilFatface }) => {
     }
   };
 
- 
+
 
   return (
     <div className="relative h-screen overflow-hidden pt-20">
@@ -26,7 +27,7 @@ const EnhancedHero = ({ abrilFatface }) => {
         animate={{ skewY: -5, opacity: 1 }}
         className="absolute inset-0 bg-[#8B4513]/10 transform origin-left"
       />
-      
+
       {/* Animated grain effect */}
       <motion.div
         animate={{
@@ -54,9 +55,9 @@ const EnhancedHero = ({ abrilFatface }) => {
             <motion.div
               key={`corner-${index}`}
               initial={{ scale: 0, rotate: rotation }}
-              animate={{ 
+              animate={{
                 scale: [1, 1.1, 1],
-                rotate: rotation + [0, 5, 0, -5, 0]
+                rotate: rotation + (0 + 5 + 0 + -5 + 0)
               }}
               transition={{
                 scale: {
@@ -79,26 +80,26 @@ const EnhancedHero = ({ abrilFatface }) => {
             />
           ))}
 
-          <motion.h1 
-            className={cn("text-7xl font-bold text-[#3E2723] mb-6", abrilFatface.className)}
-            {...floatingAnimation}
-          >
-            {/* Animated letters */}
-            {"Artisan's Corner".split('').map((letter, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.05,
-                }}
-                className="inline-block"
-              >
-                {letter}
-              </motion.span>
-            ))}
-          </motion.h1>
+<motion.h1
+  className={cn( "text-7xl font-bold text-[#3E2723] mb-6")}
+  {...floatingAnimation}
+>
+  {/* Animated letters */}
+  {"Artisan's Corner".split('').map((letter, index) => (
+    <motion.span
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.05,
+      }}
+      className="inline-block"
+    >
+      {letter}
+    </motion.span>
+  ))}
+</motion.h1>
 
           {/* Animated line with gradient */}
           <motion.div
@@ -120,7 +121,7 @@ const EnhancedHero = ({ abrilFatface }) => {
             />
           </motion.div>
 
-          <motion.p 
+          <motion.p
             className="text-xl text-[#3E2723]/80 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -190,7 +191,7 @@ const EnhancedHero = ({ abrilFatface }) => {
                 className="w-full h-full object-cover"
               />
             </motion.div>
-            <motion.div 
+            <motion.div
               className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"
               animate={{
                 opacity: [0.3, 0.4, 0.3],
@@ -211,7 +212,7 @@ const EnhancedHero = ({ abrilFatface }) => {
             <motion.div
               key={`float-${index}`}
               initial={{ x: index === 0 ? 100 : -100, y: index === 0 ? -50 : 50 }}
-              animate={{ 
+              animate={{
                 x: index === 0 ? [50, 60, 50] : [-80, -70, -80],
                 y: index === 0 ? [-80, -70, -80] : [80, 90, 80],
                 rotate: index === 0 ? [0, 2, 0, -2, 0] : [0, -2, 0, 2, 0],
@@ -231,7 +232,7 @@ const EnhancedHero = ({ abrilFatface }) => {
                 height={800}
                 className="w-full h-full object-cover"
               />
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
                 animate={{
                   opacity: [0.2, 0.3, 0.2],
@@ -275,7 +276,7 @@ const EnhancedHero = ({ abrilFatface }) => {
               key={`particle-${i}`}
               className="absolute w-1 h-1 bg-[#8B4513]/30 rounded-full"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ 
+              animate={{
                 opacity: [0, 1, 0],
                 scale: [0, 1, 0],
                 y: [0, -20, 0],

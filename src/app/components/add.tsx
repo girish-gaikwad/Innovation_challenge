@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, Users, Award, Book, PocketKnife, Star, ArrowRight, Eye } from 'lucide-react';
 
 const WorkshopEvents = () => {
-  const [hoveredEvent, setHoveredEvent] = useState(null);
+  const [hoveredEvent, setHoveredEvent] =  useState<number | null>(null);
 
   const workshops = [
     {
@@ -45,7 +45,7 @@ const WorkshopEvents = () => {
       transition: {
         duration: 20,
         repeat: Infinity,
-        repeatType: 'reverse'
+        repeatType: "reverse" as const, // Add the 'as const' assertion
       }
     }
   };
@@ -212,8 +212,7 @@ const WorkshopEvents = () => {
 
 
 const ArtisanSkills = () => {
-    const [hoveredSkill, setHoveredSkill] = useState(null);
-  
+  const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);  
     const skills = [
       {
         id: 1,

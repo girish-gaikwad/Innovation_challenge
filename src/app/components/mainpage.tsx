@@ -25,10 +25,14 @@ const abrilFatface = Abril_Fatface({
     weight: "400",
     subsets: ["latin"],
 });
-
+interface FeatureCardProps {
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    title: string;
+    description: string;
+  }
 
 // Feature Card Component
-const FeatureCard = ({ icon: Icon, title, description }) => (
+const FeatureCard = ({ icon: Icon, title, description }:FeatureCardProps) => (
     <Card className="bg-[#FDF5E6] border-[#8B4513] border-2">
         <CardHeader>
             <Icon className="w-10 h-10 text-[#8B4513] mb-2" />
@@ -41,10 +45,15 @@ const FeatureCard = ({ icon: Icon, title, description }) => (
 );
 
 
+interface TestimonialCardProps {
+    name: string;
+    role: string;
+    content: string;
+  }
 
 
 // Testimonial Card Component
-const TestimonialCard = ({ name, role, content }) => (
+const TestimonialCard = ({ name, role, content }:TestimonialCardProps) => (
     <motion.div
         whileHover={{ scale: 1.02 }}
         className="bg-[#FDF5E6] p-6 rounded-lg border-2 border-[#8B4513] shadow-lg"
@@ -65,8 +74,13 @@ const TestimonialCard = ({ name, role, content }) => (
     </motion.div>
 );
 
+interface ProductCardProps {
+    index: number;
+    title: string;
+  }
+
 // Product Card Component
-const ProductCard = ({ index, title }) => (
+const ProductCard = ({ index, title }:ProductCardProps) => (
     <motion.div
         whileHover={{ y: -10 }}
         className="bg-[#FDF5E6] rounded-lg overflow-hidden shadow-lg"
