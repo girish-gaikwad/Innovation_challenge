@@ -125,7 +125,7 @@ export default function CreativePotteryLayout() {
                         )}
                         whileHover={{ scale: 1.05 }}
                     >
-                        ArtisanCrafts
+                        Sapta Bhumi
                     </motion.h1>
 
                     {/* Navigation Menu */}
@@ -495,7 +495,7 @@ export default function CreativePotteryLayout() {
                 <div className="container mx-auto px-8">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         <div>
-                            <h3 className={cn("text-xl mb-4", rockSalt.className)}>ArtisanCrafts</h3>
+                            <h3 className={cn("text-xl mb-4", rockSalt.className)}>Sapta Bhumi</h3>
                             <p className="text-[#FDF5E6]/80">Crafting beauty, one piece at a time.</p>
                         </div>
                         {/* Continuing from the footer section */}

@@ -40,10 +40,10 @@ const components: { title: string; href: string; description: string }[] = [
       "Get in touch with our team for any inquiries or feedback.",
   },
   {
-    title: "About Us",
-    href: "/about",
+    title: "Community Forum",
+    href: "/community-forum",
     description:
-      "Learn more about our mission, vision, and values.",
+      "Join our community forum and share your thoughts with other users.",
   } 
   
 ]
